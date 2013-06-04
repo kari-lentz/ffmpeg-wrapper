@@ -68,3 +68,34 @@ void codec_context_set_bit_rate(AVCodecContext* cc, int bit_rate)
 {
      cc->bit_rate = bit_rate;
 }
+
+AVOutputFormat* format_context_get_oformat(AVFormatContext* format_context)
+{
+    format_context->oformat;
+}
+
+void format_context_set_oformat(AVFormatContext* format_context, AVOutputFormat* output_format)
+{
+    format_context->oformat = output_format;
+}
+
+enum AVCodecID output_format_get_audio_codec(AVOutputFormat* oc)
+{
+    return oc->audio_codec;
+}
+
+void output_format_set_audio_codec(AVOutputFormat* oc, enum AVCodecID codec_id)
+{
+     oc->audio_codec = codec_id;
+}
+
+enum AVCodecID output_format_get_video_codec(AVOutputFormat* oc)
+{
+    return oc->video_codec;
+}
+
+void output_format_set_video_codec(AVOutputFormat* oc, enum AVCodecID codec_id)
+{
+     oc->video_codec = codec_id;
+}
+
