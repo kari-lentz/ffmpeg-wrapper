@@ -79,6 +79,46 @@ void codec_context_set_flags(AVCodecContext* cc, int flags)
      cc->flags = flags;
 }
 
+uint64_t frame_get_channel_layout(AVFrame* cc)
+{
+    return cc->channel_layout;
+}
+
+void frame_set_channel_layout(AVFrame* frame, uint64_t channel_layout)
+{
+     frame->channel_layout = channel_layout;
+}
+
+int frame_get_channels(AVFrame* frame)
+{
+    return frame->channels;
+}
+
+void frame_set_channels(AVFrame* frame, int channels)
+{
+     frame->channels = channels;
+}
+
+int frame_get_sample_fmt(AVFrame* frame)
+{
+    return frame->format;
+}
+
+void frame_set_format(AVFrame* frame, int format)
+{
+     frame->format = format;
+}
+
+int frame_get_sample_rate(AVFrame* frame)
+{
+    return frame->sample_rate;
+}
+
+void frame_set_sample_rate(AVFrame* frame, int sample_rate)
+{
+     frame->sample_rate = sample_rate;
+}
+
 AVOutputFormat* format_context_get_oformat(AVFormatContext* format_context)
 {
     return format_context->oformat;

@@ -18,6 +18,18 @@ void codec_context_set_bit_rate(AVCodecContext* cc, int bit_rate);
 int codec_context_get_flags(AVCodecContext* cc);
 void codec_context_set_flags(AVCodecContext* cc, int flags);
 
+uint64_t frame_get_channel_layout(AVFrame* cc);
+void frame_set_channel_layout(AVFrame* frame, uint64_t channel_layout);
+
+int frame_get_channels(AVFrame* frame);
+void frame_set_channels(AVFrame* frame, int channels);
+
+int frame_get_format(AVFrame* frame);
+void frame_set_format(AVFrame* frame, int format);
+
+int frame_get_sample_rate(AVFrame* frame);
+void frame_set_sample_rate(AVFrame* frame, int sample_rate);
+
 AVOutputFormat* format_context_get_oformat(AVFormatContext* format_context);
 void format_context_set_oformat(AVFormatContext* format_context, AVOutputFormat* output_format);
 
