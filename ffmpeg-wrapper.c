@@ -69,6 +69,16 @@ void codec_context_set_bit_rate(AVCodecContext* cc, int bit_rate)
      cc->bit_rate = bit_rate;
 }
 
+int codec_context_get_flags(AVCodecContext* cc)
+{
+    return cc->flags;
+}
+
+void codec_context_set_flags(AVCodecContext* cc, int flags)
+{
+     cc->flags = flags;
+}
+
 AVOutputFormat* format_context_get_oformat(AVFormatContext* format_context)
 {
     return format_context->oformat;
@@ -89,6 +99,16 @@ void format_context_set_pb(AVFormatContext* format_context, AVIOContext* io_ctx)
     format_context->pb = io_ctx;
 }
 
+int format_context_get_flags(AVFormatContext* format_context)
+{
+    return format_context->flags;
+}
+
+void format_context_set_flags(AVFormatContext* format_context, int flags)
+{
+    format_context->flags = flags;
+}
+
 enum AVCodecID output_format_get_audio_codec(AVOutputFormat* oc)
 {
     return oc->audio_codec;
@@ -107,6 +127,16 @@ enum AVCodecID output_format_get_video_codec(AVOutputFormat* oc)
 void output_format_set_video_codec(AVOutputFormat* oc, enum AVCodecID codec_id)
 {
      oc->video_codec = codec_id;
+}
+
+int output_format_get_flags(AVFormatContext* output_format)
+{
+    return output_format->flags;
+}
+
+void output_format_set_flags(AVFormatContext* output_format, int flags)
+{
+    output_format->flags = flags;
 }
 
 AVCodecContext* stream_get_codec(AVStream* stream)
